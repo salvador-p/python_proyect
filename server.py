@@ -4,13 +4,10 @@ app = Flask('__main__')
 
 """Codigo de prueba"""
 device = {
-    "Name":"1122334455",
-    "Last_Name":"Temp.Sensor",
-    "Nickname": "Packito_67"
+    "Name":"Salvador",
+    "Last_Name":"Perez",
     
 }
-
-
 
 @app.route('/devices', methods=['GET'])
 def go_home():
@@ -25,7 +22,8 @@ def save_user():
 @app.route('/devices', methods=['POST'])
 def save_device():
     device = request.json
-    return device
+    print(device)
+    return device, 201
 
 
 if __name__=='__main__':
